@@ -34,6 +34,14 @@ function init() {
             }
         ])
         .then((response) => {
-
+            const title = response.title;
+            const installation = response.installation;
+            const usage = response.usage;
+            const credits = response.credits;
+            const license = response.license;
+            const testing = response.testing;
+            console.log(response);
         })
 }
+
+init();
