@@ -26,6 +26,8 @@ Install Node onto your machine following official documentation. Use "npm i inqu
 
 Run "node index.js" on your local terminal after the dependencies have been installed to receive a series of prompts. Provide a title, description, installation instructions, usage instructions, license, testing instructions and contact info for your project. The answers to these inputs will be placed inside an example README file for your project.
 
+![An image of the user terminal](terminal-example.png)
+
 <a name="credits"></a>
 
 ## Credits

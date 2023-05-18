@@ -26,7 +26,7 @@ function init() {
             },
             {
                 name: "license",
-                message: "What license does this project use?", //make a license badge
+                message: "What license does this project use?",
                 type: "list",
                 choices: ["MIT", "Eclipse", "Mozilla"]
             },
@@ -71,15 +71,6 @@ function init() {
 
             }
 
-            // var inputs = [
-            //     `# ${title}\n`,
-            //     `${description}\n\n`,
-            //     `## Installation\n${installation}\n\n`,
-            //     `## Usage\n${usage}`,
-            //     `## Credits\n${credits}\n\n`,
-            //     `## License\n${license}\n\n`,
-            //     `## Testing\n${testing}\n\n`
-            // ];
             var inputNames = [
                 ``,
                 `## Table of Contents`,
