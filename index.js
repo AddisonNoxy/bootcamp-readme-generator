@@ -28,7 +28,7 @@ function init() {
                 name: "license",
                 message: "What license does this project use?", //make a license badge
                 type: "list",
-                choices: ["MIT", "Apache"]
+                choices: ["MIT", "Eclipse", "Mozilla"]
             },
             {
                 name: "testing",
@@ -55,6 +55,22 @@ function init() {
             const email = response.email;
             console.log(response);
 
+            switch (license) {
+                case "MIT":
+                    var licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+                break;
+                case "Eclipse":
+                    var licenseBadge = `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)`;
+                break;
+                case "Mozilla":
+                    var licenseBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+                break;
+                default:
+                    var licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+
+
+            }
+
             // var inputs = [
             //     `# ${title}\n`,
             //     `${description}\n\n`,
@@ -72,7 +88,7 @@ function init() {
                 `<a name="credits"></a>\n## Credits`,
                 `<a name="license"></a>\n## License`,
                 `<a name="testing"></a>\n## Testing`,
-                `<a name="testing"></a>\n## Questions`
+                `<a name="questions"></a>\n## Questions`
             ];
 
             const tableOfContents = `1. [ Description ](#description)\n2. [ Installation ](#installation)\n3. [ Usage ](#usage)\n4. [ Credits ](#credits)\n5. [ License ](#license)\n6. [ Testing ](#testing)\n6. [ Questions ](#questions)`;
@@ -88,32 +104,20 @@ function init() {
                 `${username}\n\n${email}`
             ]
 
-            fs.writeFile("README.md", `# ${title}\n`, (err) => {
+            fs.writeFile("Example-README.md", ``, (err) => {
                 console.log("Success!");
             });
             
-            var totalInput = `## ${title}\n`;
+            var totalInput = licenseBadge + `\n\n# ${title}\n`;
 
             for (let i = 0; i < inputValues.length; i++) {
                 let writeInput = inputNames[i] + `\n` + inputValues[i] + `\n\n`;
                 totalInput = totalInput + writeInput;
-
-                // fs.appendFile("README.md", writeInput, (err) => {
-                //     console.log("Wrote the line!");
-                // })
             }
 
-            //console.log(totalInput);
-
-            fs.writeFile("README.md", totalInput, (err) => {
+            fs.writeFile("Example-README.md", totalInput, (err) => {
                 console.log("Readme written!");
             })
-
-            // for (const input of inputs) {
-            //     fs.appendFile("README.md", input, (err) => {
-            //         console.log("Successfully added the line!");
-            //     })
-            // }
 
 
 
